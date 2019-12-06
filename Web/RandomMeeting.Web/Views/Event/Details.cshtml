@@ -1,0 +1,56 @@
+﻿@using RandomMeeting.Web.ViewModels.Events;
+@model EventDetailsViewModel
+
+<h1 class="row justify-content-center" style="font-family: 'Comic Sans MS'">@Model.Name</h1>
+<div class="top-border-line primary-separator"></div>
+<br />
+<div class="row justify-content-center" style="font-family: 'Comic Sans MS'">
+    <div class="container-fluid ml-5 text-center">
+        <table class="table table-hover">
+            <thead>
+                <tr class="row">
+                    <th scope="col" class="col-lg-2">Name</th>
+                    <th scope="col" class="col-lg-2">Start</th>
+                    <th scope="col" class="col-lg-2">End</th>
+                    <th scope="col" class="col-lg-2">Likes</th>
+                    <th scope="col" class="col-lg-2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row">
+                    <td class="col-lg-2">@Model.Name</td>
+                    <td class="col-lg-2">@Model.Start</td>
+                    <td class="col-lg-2">@Model.End</td>
+                    <td class="col-lg-2">@Model.NoOfLikes</td>
+                    <td class="col-lg-2">
+                        <div class="button-holder">
+                            <a asp-controller="Event" asp-action="Like" asp-route-id="@Model.Id" class="btn btn-primary">Like</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br />
+<div class="row justify-content-center">
+    <img src="@Model.ImageUrl" width="500" height="200" alt="" />
+</div>
+<br />
+<div style="font-family: 'Comic Sans MS'">
+    <h2 class="row justify-content-center">Description: </h2>
+    <h4 class="row justify-content-center">@Model.Description</h4>
+</div>
+<br />
+<div style="font-family: 'Comic Sans MS'">
+    <h2 class="row justify-content-center">Address: </h2>
+    <h4 class="row justify-content-center">@Model.Address</h4>
+</div>
+<br />
+<div style="font-family: 'Comic Sans MS'">
+    <h2 class="row justify-content-center">Participants: </h2>
+    @foreach (var user in Model.Users)
+    {
+        <h4 class="row justify-content-center">@user.FirstName @user.LastName</h4>
+    }
+</div>

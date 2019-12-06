@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\RandomMeeting.Data.Common\RandomMeeting.Data.Common.csproj" />
+    <ProjectReference Include="..\..\Data\RandomMeeting.Data.Models\RandomMeeting.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\RandomMeeting.Data\RandomMeeting.Data.csproj" />
+    <ProjectReference Include="..\RandomMeeting.Services.Mapping\RandomMeeting.Services.Mapping.csproj" />
+  </ItemGroup>
+
+</Project>

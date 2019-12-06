@@ -1,0 +1,51 @@
+﻿@using RandomMeeting.Web.ViewModels.Events
+@model CreateEventInputModel
+
+<h1 class="row justify-content-center" style="font-family: 'Comic Sans MS'">Create an event</h1>
+<div class="row justify-content-center" style="font-family: 'Comic Sans MS'">
+    <div class="container-fluid col-md-4 border">
+        <section>
+            <form id="createEvent" method="post">
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="@Model.Name"></label>
+                    <input asp-for="@Model.Name" class="form-control col-md-8" />
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Description"></label>
+                    <input asp-for="@Model.Description" class="form-control col-md-12" />
+                    <span asp-validation-for="@Model.Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Start"></label>
+                    <input asp-for="@Model.Start" class="form-control" />
+                    <span asp-validation-for="@Model.Start" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.End"></label>
+                    <input asp-for="@Model.End" class="form-control" />
+                    <span asp-validation-for="@Model.End" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Address"></label>
+                    <input asp-for="@Model.Address" class="form-control col-md-12" />
+                    <span asp-validation-for="@Model.Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.ImageUrl"></label>
+                    <input asp-for="@Model.ImageUrl" class="form-control col-md-12" />
+                    <span asp-validation-for="@Model.ImageUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

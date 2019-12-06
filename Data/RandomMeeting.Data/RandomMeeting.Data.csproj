@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190831125633_Adding-Events.cs" />
+    <Compile Remove="Migrations\20190831125633_Adding-Events.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Automapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RandomMeeting.Data.Common\RandomMeeting.Data.Common.csproj" />
+    <ProjectReference Include="..\RandomMeeting.Data.Models\RandomMeeting.Data.Models.csproj" />
+  </ItemGroup>
+
+</Project>

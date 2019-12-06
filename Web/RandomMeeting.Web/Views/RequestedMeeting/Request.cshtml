@@ -1,0 +1,40 @@
+﻿@using RandomMeeting.Web.ViewModels.RequestedMeetings
+@using RandomMeeting.Data.Models.Enums
+@model RequestMeetingInputModel
+
+<h1 class="row justify-content-center" style="font-family: 'Comic Sans MS'">Request a meeting</h1>
+<div class="row justify-content-center" style="font-family: 'Comic Sans MS'">
+    <div class="container-fluid col-md-4 border">
+        <section>
+            <form id="requestMeeting" method="post">
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="@Model.DesiredGender"></label>
+                    <div>
+                        <select asp-for="@Model.DesiredGender" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control col-md-6">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="@Model.DesiredGender" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.DesiredAgeGroup"></label>
+                    <div>
+                        <select asp-for="@Model.DesiredAgeGroup" asp-items="Html.GetEnumSelectList<AgeGroup>()" class="form-control col-md-6">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="@Model.DesiredAgeGroup" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Request</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

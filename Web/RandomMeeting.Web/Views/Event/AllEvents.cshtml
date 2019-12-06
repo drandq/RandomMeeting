@@ -1,0 +1,32 @@
+﻿@using RandomMeeting.Web.ViewModels.Events
+@model IEnumerable<EventSummaryViewModel>
+
+<h1 class="row justify-content-center" style="font-family: 'Comic Sans MS'">All Events</h1>
+
+<div class="row justify-content-center" style="font-family: 'Comic Sans MS'">
+    <div class="container-fluid ml-5 text-center">
+        <table class="table table-hover">
+            <thead>
+                <tr class="row">
+                    <th scope="col" class="col-lg-3">Name</th>
+                    <th scope="col" class="col-lg-3">Start</th>
+                    <th scope="col" class="col-lg-3"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var eventViewModel in Model)
+                {
+                <tr class="row">
+                    <td class="col-lg-3">@eventViewModel.Name</td>
+                    <td class="col-lg-3">@eventViewModel.Start</td>
+                    <td class="col-lg-3">
+                        <div class="button-holder">
+                            <a asp-controller="Event" asp-action="Details" asp-route-id="@eventViewModel.Id" class="btn btn-primary">Details</a>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

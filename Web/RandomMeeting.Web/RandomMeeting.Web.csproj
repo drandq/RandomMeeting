@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-RandomMeeting.Web-55EE318B-EE3F-4051-953B-6E59072DBE2A</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Automapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\RandomMeeting.Data.Models\RandomMeeting.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\RandomMeeting.Data\RandomMeeting.Data.csproj" />
+    <ProjectReference Include="..\..\Services\RandomMeeting.Services.Data\RandomMeeting.Services.Data.csproj" />
+    <ProjectReference Include="..\RandomMeeting.Web.ViewModels\RandomMeeting.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>
